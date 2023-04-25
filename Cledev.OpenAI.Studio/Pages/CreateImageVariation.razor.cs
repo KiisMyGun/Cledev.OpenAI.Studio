@@ -1,5 +1,6 @@
 ﻿using Cledev.OpenAI.V1.Contracts.Images;
 using Cledev.OpenAI.V1.Helpers;
+
 using Microsoft.AspNetCore.Components.Forms;
 
 namespace Cledev.OpenAI.Studio.Pages;
@@ -7,6 +8,12 @@ namespace Cledev.OpenAI.Studio.Pages;
 public class CreateImageVariationPage : ImagePageBase
 {
     protected CreateImageVariationRequest Request { get; set; } = null!;
+
+    public async Task OnInputFileForImageChange(InputFileChangeEventArgs e)
+    {
+        Request.Image = await GetFileBytes(e);
+        Request.ImageName = e.File.Name;
+    }
 
     protected override void OnInitialized()
     {
@@ -20,12 +27,6 @@ public class CreateImageVariationPage : ImagePageBase
             ResponseFormat = ImageResponseFormat.B64Json.ToStringFormat(),
             N = 1
         };
-    }
-
-    public async Task OnInputFileForImageChange(InputFileChangeEventArgs e)
-    {
-        Request.Image = await GetFileBytes(e);
-        Request.ImageName = e.File.Name;
     }
 
     protected async Task OnSubmitAsync()
@@ -50,6 +51,6 @@ public class CreateImageVariationPage : ImagePageBase
 
     protected static class Tooltips
     {
-        public static string Image = "Required. The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.";
+        public static string Image = "必须的。要用作变体基础的图像。必须是有效的PNG文件，小于4MB，并且为正方形。";//"Required. The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.";
     }
 }

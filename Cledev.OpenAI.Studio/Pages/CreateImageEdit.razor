@@ -8,17 +8,17 @@
 
 <ul class="nav nav-tabs mb-4">
     <li class="nav-item">
-        <a class="nav-link" href="/create-image">Create Image</a>
+        <a class="nav-link" href="/create-image">生成图像</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Create Image Edit</a>
+        <a class="nav-link active" aria-current="page" href="#">修改图像</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/create-image-variation">Create Image Variation</a>
+        <a class="nav-link" href="/create-image-variation">创新图像</a>
     </li>
 </ul>
 
-<p class="mb-4">Creates an edited or extended image given an original image and a prompt.</p>
+<p class="mb-4">在给定原始图像和提示的情况下，创建经过编辑或扩展的图像。</p>
 
 <EditForm Model="Request" OnValidSubmit="OnSubmitAsync">
     <div class="row">
@@ -27,15 +27,15 @@
         </div>
         <div class="col-md-9 col-sm-12 ps-md-4">
             <div class="mb-3">
-                <FormLabel InputId="Image" Tooltip="@Tooltips.Image">Select the image to edit</FormLabel>
+                <FormLabel InputId="Image" Tooltip="@Tooltips.Image">选择要编辑的图像</FormLabel>
                 <InputFile id="Image" OnChange="OnInputFileForImageChange" class="form-control"></InputFile>
             </div>
             <div class="mb-3">
-                <FormLabel InputId="Mask" Tooltip="@Tooltips.Mask">Select an optional mask</FormLabel>
+                <FormLabel InputId="Mask" Tooltip="@Tooltips.Mask">可选额外的图像</FormLabel>
                 <InputFile id="Mask" OnChange="OnInputFileForMaskChange" class="form-control"></InputFile>
             </div>
             <div class="mb-3">
-                <FormLabel InputId="Prompt" Tooltip="@Tooltips.Prompt">Prompt</FormLabel>
+                <FormLabel InputId="Prompt" Tooltip="@Tooltips.Prompt">提示</FormLabel>
                 <InputText id="Prompt" @bind-Value="Request.Prompt" MaxBufferSize="@(4*1024)" class="form-control" />
             </div>
 

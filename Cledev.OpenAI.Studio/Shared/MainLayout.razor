@@ -1,45 +1,63 @@
 ﻿@inherits LayoutComponentBase
 
-<PageTitle>Cledev OpenAI Studio</PageTitle>
+<PageTitle>AI</PageTitle>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom mb-3">
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom mb-3 bg-warning">
         <div class="container">
-            <a class="navbar-brand" href="/">Cledev OpenAI Studio</a>
+            <a class="mr-auto" href="https://imxiaoxin.cn">
+                <img src="images/logo.png" class="rounded-lg cursor-pointer" alt="一只狐狸" >
+            </a>
+            @*<a class="navbar-brand" href="/">AI</a>*@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <div class="container my-2 col-lg-5">
+                <div class="row">
+                    <div>
+                            <div class="text-danger h5">
+                                各种方便主播，房管，水友的工具站
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-secondary">
+                                    狐狸是一种灵巧、聪明的哺乳动物，属于犬科，是一种非常聪明的夜行动物，通常在黄昏和夜晚活动。
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
             <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <NavLink class="nav-link" href="/audio" Match="NavLinkMatch.All">
-                        Audio
-                    </NavLink>
                     <NavLink class="nav-link" href="/chat" Match="NavLinkMatch.All">
-                        Chat
+                        对话
                     </NavLink>
-                    <NavLink class="nav-link" href="/completions" Match="NavLinkMatch.All">
-                        Completions
+                    @*<NavLink class="nav-link" href="/completions" Match="NavLinkMatch.All">
+                    Completions
                     </NavLink>
                     <NavLink class="nav-link" href="/edits" Match="NavLinkMatch.All">
-                        Edits
+                    Edits
                     </NavLink>
                     <NavLink class="nav-link" href="/embeddings" Match="NavLinkMatch.All">
-                        Embeddings
+                    Embeddings
                     </NavLink>
                     <NavLink class="nav-link" href="/files" Match="NavLinkMatch.All">
-                        Files
+                    Files
                     </NavLink>
                     <NavLink class="nav-link" href="/fine-tuning" Match="NavLinkMatch.All">
-                        Fine-Tuning
-                    </NavLink>
+                    Fine-Tuning
+                    </NavLink>*@
                     <NavLink class="nav-link" href="/create-image" Match="NavLinkMatch.Prefix">
-                        Images
+                        图像
                     </NavLink>
-                    <NavLink class="nav-link" href="/models" Match="NavLinkMatch.All">
-                        Models
+                    @*<NavLink class="nav-link" href="/models" Match="NavLinkMatch.All">
+                    Models
                     </NavLink>
                     <NavLink class="nav-link" href="/moderations" Match="NavLinkMatch.All">
-                        Moderations
+                    Moderations
+                    </NavLink>*@
+                    <NavLink class="nav-link" href="/audio" Match="NavLinkMatch.All">
+                        音频
                     </NavLink>
                 </ul>
             </div>
@@ -70,7 +88,7 @@
         <div class="row">
             <div class="col-md-12 my-4">
                 <div class="mb-2">
-                    <span>&copy; @DateTime.UtcNow.Year <a href="https://www.linkedin.com/in/lucabriguglia/" class="text-decoration-none" title="Luca Briguglia">Luca Briguglia</a></span>
+                    <span>&copy; @DateTime.UtcNow.Year <a href="https://www.linkedin.com/in/lucabriguglia/" class="text-decoration-none" title="Luca Briguglia">Thanks Luca Briguglia</a></span>
                 </div>
             </div>
         </div>

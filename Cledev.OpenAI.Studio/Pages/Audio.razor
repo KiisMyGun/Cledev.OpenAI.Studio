@@ -4,11 +4,11 @@
 @using Cledev.OpenAI.V1.Helpers
 @inherits AudioPage
 
-<PageTitle>Audio</PageTitle>
+<PageTitle>音频</PageTitle>
 
-<PageHeader Icon="fa-regular fa-file-audio">Audio</PageHeader>
+<PageHeader Icon="fa-regular fa-file-audio">音频</PageHeader>
 
-<p class="mb-4">Turn audio into text.</p>
+<p class="mb-4">将音频转换为文本。</p>
 
 <EditForm Model="Request" OnValidSubmit="OnSubmitAsync">
     <div class="row">
@@ -17,11 +17,11 @@
         </div>
         <div class="col-md-9 col-sm-12 ps-md-4">
             <div class="mb-3">
-                <FormLabel InputId="File" Tooltip="@Tooltips.File">Select the audio file</FormLabel>
+                <FormLabel InputId="File" Tooltip="@Tooltips.File">选择一个音频文件</FormLabel>
                 <InputFile id="File" OnChange="OnInputFileChange" class="form-control"></InputFile>
             </div>
             <div class="mb-3">
-                <FormLabel InputId="Prompt" Tooltip="@Tooltips.Prompt" ExtraInfo="Optional">Input</FormLabel>
+                <FormLabel InputId="Prompt" Tooltip="@Tooltips.Prompt" ExtraInfo="可选">提示</FormLabel>
                 <InputText id="Prompt" @bind-Value="Request.Prompt" class="form-control"/>
             </div>
 

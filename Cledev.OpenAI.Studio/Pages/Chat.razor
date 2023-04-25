@@ -2,20 +2,20 @@
 
 @inherits ChatPage
 
-<PageTitle>Chat</PageTitle>
+<PageTitle>对话</PageTitle>
 
 <a id="top"></a>
 
-<PageHeader Icon="fa-regular fa-comments">Chat</PageHeader>
+<PageHeader Icon="fa-regular fa-comments">对话</PageHeader>
 
-<p class="mb-4">Given a chat conversation, the model will return a chat completion response.</p>
+<p class="mb-4">给定一个聊天会话，该模型将返回一个聊天完成响应。</p>
 
 <EditForm Model="Request" OnValidSubmit="OnSubmitAsync">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chatModal">Open Chat</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chatModal">打开对话</button>
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasOptions" aria-labelledby="offcanvasOptionsLabel" style="z-index: 10000;">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasOptionsLabel">Options</h5>
+            <h5 class="offcanvas-title" id="offcanvasOptionsLabel">设置</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -27,14 +27,14 @@
         <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
-                    <h5 class="modal-title" id="chatModalLabel">Chat</h5>
+                    <h5 class="modal-title" id="chatModalLabel">对话</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-header" style="background-color: #f7f7f7;">
                     <div class="row m-auto">
                         <div class="col-12">
-                            <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasOptions" aria-controls="offcanvasOptions"><i class="fa-solid fa-gear"></i> Options</button>
-                            <button class="btn btn-outline-secondary btn-sm ms-2" type="button" @onclick="Reset"><i class="fa-solid fa-comment-slash"></i> Reset</button>
+                            <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasOptions" aria-controls="offcanvasOptions"><i class="fa-solid fa-gear"></i> 设置</button>
+                            <button class="btn btn-outline-secondary btn-sm ms-2" type="button" @onclick="Reset"><i class="fa-solid fa-comment-slash"></i> 重置</button>
                         </div>
                     </div>
                 </div>

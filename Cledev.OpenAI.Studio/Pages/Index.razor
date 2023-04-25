@@ -1,27 +1,33 @@
 ﻿@page "/"
 @using Markdig
 
-<PageTitle>Cledev OpenAI Studio</PageTitle>
+<PageTitle>AI</PageTitle>
 
 <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
-    <IndexCard Icon="fa-regular fa-file-audio"
-               Title="Audio"
-               Description="Turn audio into text."
-               Link="/audio">
-    </IndexCard>
     <IndexCard Icon="fa-regular fa-comments"
-               Title="Chat"
-               Description="Given a chat conversation, the model will return a chat completion response."
+               Title="对话"
+               Description="给定一个聊天会话，该模型将返回一个聊天完成响应。"
                Link="/chat">
     </IndexCard>
-    <IndexCard Icon="fa-regular fa-comment"
+    <IndexCard Icon="fa-regular fa-images"
+               Title="图像"
+               Description="在给出提示的情况下创建或编辑图像。"
+               Link="/create-image">
+    </IndexCard>
+    <IndexCard Icon="fa-regular fa-file-audio"
+               Title="音频"
+               Description="将音频转换为文本。"
+               Link="/audio">
+    </IndexCard>
+    
+    @*<IndexCard Icon="fa-regular fa-comment"
                Title="Completions"
                Description="Given a prompt, the model will return one or more predicted completions."
                Link="/completions">
-    </IndexCard>
+    </IndexCard>*@
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+@*<div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
     <IndexCard Icon="fa-regular fa-pen-to-square"
                Title="Edits"
                Description="Given a prompt and an instruction, the model will return an edited version of the prompt."
@@ -63,9 +69,9 @@
                Description="Given a input text, outputs if the model classifies it as violating OpenAI's content policy."
                Link="/moderations">
     </IndexCard>
-</div>
+</div>*@
 
-<div class="card">
+@*<div class="card">
     <div class="card-header">Configuration</div>
     <div class="card-body">
         <p>In order to use the Studio, you need to update <span class="fw-bold">appsettings.json</span> with your your <span class="fw-bold">ApiKey</span>, <span class="fw-bold">Organization</span> and <span class="fw-bold">Organization Name</span>.</p>
@@ -75,15 +81,15 @@
         }
         <p>Get your ApiKey from the <a href="https://platform.openai.com/account/">OpenAPI Platform</a>.</p>
     </div>
-</div>
+</div>*@
 
 @code
 {
-    protected string? Content { get; set; }
+    //protected string? Content { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-        var index = await File.ReadAllTextAsync("index.md");
-        Content = Markdown.ToHtml(index);
-    }
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    var index = await File.ReadAllTextAsync("index.md");
+    //    Content = Markdown.ToHtml(index);
+    //}
 }

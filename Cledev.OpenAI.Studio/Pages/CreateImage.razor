@@ -2,23 +2,23 @@
 
 @inherits CreateImagePage
 
-<PageTitle>Create Image</PageTitle>
+<PageTitle>生成图像</PageTitle>
 
-<PageHeader Icon="fa-regular fa-images">Images</PageHeader>
+<PageHeader Icon="fa-regular fa-images">图像</PageHeader>
 
 <ul class="nav nav-tabs mb-4">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Create Image</a>
+        <a class="nav-link active" aria-current="page" href="/create-image">生成图像</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/create-image-edit">Create Image Edit</a>
+        <a class="nav-link" href="/create-image-edit">修改图像</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/create-image-variation">Create Image Variation</a>
+        <a class="nav-link" href="/create-image-variation">创新图像</a>
     </li>
 </ul>
 
-<p class="mb-4">Creates an image given a prompt.</p>
+<p class="mb-4">在给定提示的情况下创建图像。</p>
 
 <EditForm Model="Request" OnValidSubmit="OnSubmitAsync">
     <div class="row">
@@ -27,7 +27,7 @@
         </div>
         <div class="col-md-9 col-sm-12 ps-md-4">
             <div class="mb-3">
-                <FormLabel InputId="Prompt" Tooltip="@Tooltips.Prompt">Prompt</FormLabel>
+                <FormLabel InputId="Prompt" Tooltip="@Tooltips.Prompt">提示</FormLabel>
                 <InputText id="Prompt" @bind-Value="Request.Prompt" class="form-control"/>
             </div>
 

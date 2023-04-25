@@ -8,17 +8,17 @@
 
 <ul class="nav nav-tabs mb-4">
     <li class="nav-item">
-        <a class="nav-link" href="/create-image">Create Image</a>
+        <a class="nav-link" href="/create-image">生成图像</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/create-image-edit">Create Image Edit</a>
+        <a class="nav-link" href="/create-image-edit">修改图像</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Create Image Variation</a>
+        <a class="nav-link active" aria-current="page" href="#">创新图像</a>
     </li>
 </ul>
 
-<p class="mb-4">Creates a variation of a given image.</p>
+<p class="mb-4">生成给定图像的创新。</p>
 
 <EditForm Model="Request" OnValidSubmit="OnSubmitAsync">
     <div class="row">
@@ -27,7 +27,7 @@
         </div>
         <div class="col-md-9 col-sm-12 ps-md-4">
             <div class="mb-3">
-                <FormLabel InputId="Image" Tooltip="@Tooltips.Image">Select the image</FormLabel>
+                <FormLabel InputId="Image" Tooltip="@Tooltips.Image">选择一张图像</FormLabel>
                 <InputFile id="Image" OnChange="OnInputFileForImageChange" class="form-control"></InputFile>
             </div>
 
