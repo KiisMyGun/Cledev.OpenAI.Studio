@@ -1,3 +1,4 @@
+using Cledev.OpenAI;
 using Cledev.OpenAI.Extensions;
 using Cledev.OpenAI.Studio.Extensions;
 

@@ -1,0 +1,48 @@
+name: 生成 .NET Core 应用程序并将其部署到 Web 应用 CledevOpenAIStudio20230428180656
+on:
+  push:
+    branches:
+    - main
+env:
+  AZURE_WEBAPP_NAME: CledevOpenAIStudio20230428180656
+  AZURE_WEBAPP_PACKAGE_PATH: Cledev.OpenAI.Studio/published
+  CONFIGURATION: Release
+  DOTNET_CORE_VERSION: 7.0.x
+  WORKING_DIRECTORY: Cledev.OpenAI.Studio
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+    - name: Restore
+      run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
+    - name: Build
+      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+    - name: Test
+      run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
+    - name: Publish
+      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: webapp
+        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      with:
+        name: webapp
+        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Deploy to Azure WebApp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.CledevOpenAIStudio20230428180656_12E9 }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}

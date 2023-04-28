@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -8,6 +8,7 @@
 
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<UserSecretsId>2763caf5-5e87-4b8a-a4e8-5388f5b05b7e</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
